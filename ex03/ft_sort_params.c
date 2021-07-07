@@ -76,27 +76,30 @@ int ft_convert(char c)
 {
 	return c;
 }
+void ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
 int main(int argc, char **argv)
 {
-	printf("%d", ft_convert('3'));
 	(void) argv;
 	(void) argc;
-	int max = argc;
 	int i = 0;
  	int tab[argc];
-	while (i <= max)
+	while (i <= argc - 1)
 	{
-		tab[i] = ft_convert(argv[i]);
+		tab[i] = ft_convert(*argv[i]);
 		i++;		
 	}
-	i = 0;
-	while (i > 0)
+	ft_sort_int_tab(tab, argc);
+	i = 1;
+	while (i < argc)
 	{
-		ft_sort_int_tab(tab, max);
-		if (i >  1)
+		ft_putchar(tab[i]);
+		if (i != argc - 1)
 			ft_putstr("\n");
-		i--;
+		i++;
 	}
 	return (0);
 }
