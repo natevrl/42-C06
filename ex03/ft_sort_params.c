@@ -87,7 +87,7 @@ int main(int argc, char **argv)
 	(void) argc;
 	int i = 0;
  	int tab[argc];
-	while (i <= argc - 1)
+	while (i < argc)
 	{
 		tab[i] = ft_convert(*argv[i]);
 		i++;		
