@@ -6,7 +6,7 @@
 /*   By: nbenhado <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 15:46:54 by nbenhado          #+#    #+#             */
-/*   Updated: 2021/07/07 15:51:30 by nbenhado         ###   ########.fr       */
+/*   Updated: 2021/07/08 14:06:16 by nbenhado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,17 @@ void	ft_putstr(char	*str)
 	}
 }
 
-int main(int argc, char **argv)
+int	main(int	argc, char	**argv)
 {
+	int	i;
+
+	i = argc - 1;
 	(void) argv;
 	(void) argc;
-	int i = argc - 1;
 	while (i > 0)
 	{
 		ft_putstr(argv[i]);
-		
-		if (i >  1)
+		if (i > 1)
 			ft_putstr("\n");
 		i--;
 	}

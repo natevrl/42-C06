@@ -6,7 +6,7 @@
 /*   By: nbenhado <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 15:10:02 by nbenhado          #+#    #+#             */
-/*   Updated: 2021/07/07 15:35:21 by nbenhado         ###   ########.fr       */
+/*   Updated: 2021/07/08 14:02:08 by nbenhado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -24,10 +24,10 @@ void	ft_putstr(char	*str)
 	}
 }
 
-int main(int argc, char **argv)
+int	main(int	argc, char	**argv)
 {
 	(void) argc;
 	(void) argv;
- 	ft_putstr(argv[0]);
+	ft_putstr(argv[0]);
 	return (0);
 }

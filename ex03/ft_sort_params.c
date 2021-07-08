@@ -6,7 +6,7 @@
 /*   By: nbenhado <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 16:03:49 by nbenhado          #+#    #+#             */
-/*   Updated: 2021/07/07 17:29:01 by nbenhado         ###   ########.fr       */
+/*   Updated: 2021/07/08 18:33:20 by nbenhado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,15 @@ void	ft_putstr(char	*str)
 		write(1, &str[index], 1);
 		index++;
 	}
+}
+
+void	ft_swap2(char **a, char **b)
+{
+	char	*c;
+
+	c = *b;
+	*b = *a;
+	*a = c;
 }
 
 int	ft_strcmp(char	*s1, char	*s2)
@@ -45,60 +54,37 @@ int	ft_strcmp(char	*s1, char	*s2)
 		return (-1);
 }
 
-void	ft_swap2(int *a, int *b)
-{
-	int	c;
-
-	c = *b;
-	*b = *a;
-	*a = c;
-}
-
-void	ft_sort_int_tab(int	*tab, int	size)
+void	ft_sort_int_tab(char	**argv)
 {
 	int	a;
 	int	b;
+	int	compare;
 
 	a = 0;
-	while (a < size)
+	while (argv[a])
 	{
-		b = 0;
-		while (b < size)
+		b = 1;
+		while (argv[b])
 		{
-			if (tab[a] < tab[b])
-				ft_swap2(&tab[a], &tab[b]);
+			compare = ft_strcmp(argv[a], argv[b]);
+			if (compare == 1)
+				ft_swap2(&argv[a], &argv[b]);
 			b++;
 		}
 		a++;
 	}
 }
-int ft_convert(char c)
-{
-	return c;
-}
-void ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
 
-int main(int argc, char **argv)
+int	main(int	argc, char	**argv)
 {
-	(void) argv;
-	(void) argc;
-	int i = 0;
- 	int tab[argc];
-	while (i < argc)
-	{
-		tab[i] = ft_convert(*argv[i]);
-		i++;		
-	}
-	ft_sort_int_tab(tab, argc);
+	int	i;
+
+	ft_sort_int_tab(argv);
 	i = 1;
-	while (i < argc)
+	while (argv[i])
 	{
-		ft_putchar(tab[i]);
-		if (i != argc - 1)
-			ft_putstr("\n");
+		ft_putstr(argv[argc - i]);
+		ft_putstr("\n");
 		i++;
 	}
 	return (0);
