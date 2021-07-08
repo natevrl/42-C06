@@ -6,12 +6,11 @@
 /*   By: nbenhado <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 15:35:39 by nbenhado          #+#    #+#             */
-/*   Updated: 2021/07/08 14:04:39 by nbenhado         ###   ########.fr       */
+/*   Updated: 2021/07/08 18:39:34 by nbenhado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
 void	ft_putstr(char	*str)
 {
