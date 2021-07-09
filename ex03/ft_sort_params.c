@@ -6,7 +6,7 @@
 /*   By: nbenhado <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 16:03:49 by nbenhado          #+#    #+#             */
-/*   Updated: 2021/07/09 12:00:57 by nbenhado         ###   ########.fr       */
+/*   Updated: 2021/07/09 12:06:17 by nbenhado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int	main(int	argc, char	**argv)
 	int	i;
 
 	if (argc > 0)
-	ft_sort_int_tab(argv);
+		ft_sort_int_tab(argv);
 	i = 1;
 	while (argv[i])
 	{
