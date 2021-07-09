@@ -6,7 +6,7 @@
 /*   By: nbenhado <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 16:03:49 by nbenhado          #+#    #+#             */
-/*   Updated: 2021/07/08 18:40:09 by nbenhado         ###   ########.fr       */
+/*   Updated: 2021/07/09 12:00:57 by nbenhado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +59,14 @@ void	ft_sort_int_tab(char	**argv)
 	int	b;
 	int	compare;
 
-	a = 0;
+	a = 1;
 	while (argv[a])
 	{
 		b = 1;
 		while (argv[b])
 		{
 			compare = ft_strcmp(argv[a], argv[b]);
-			if (compare == 1)
+			if (compare == -1)
 				ft_swap2(&argv[a], &argv[b]);
 			b++;
 		}
@@ -78,13 +78,19 @@ int	main(int	argc, char	**argv)
 {
 	int	i;
 
+	if (argc > 0)
 	ft_sort_int_tab(argv);
 	i = 1;
 	while (argv[i])
 	{
-		ft_putstr(argv[argc - i]);
-		ft_putstr("\n");
-		i++;
+		if (i == 0)
+			i++;
+		else
+		{
+			ft_putstr(argv[i]);
+			ft_putstr("\n");
+			i++;
+		}
 	}
 	return (0);
 }
